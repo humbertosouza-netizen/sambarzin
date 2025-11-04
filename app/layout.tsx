@@ -14,18 +14,18 @@ const titanOne = Titan_One({
 });
 
 export const metadata: Metadata = {
-  title: "Feijoada de Inauguração | Sambarzin",
-  description: "O melhor Samba de São Gonçalo está de volta! Dia 9 de novembro com Revelação, Marquinhos Sensação e Terreiro de Crioulo.",
+  title: "SAMBA DE CABOCLO — Sambarzin",
+  description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
   openGraph: {
-    title: "Feijoada de Inauguração | Sambarzin",
-    description: "O melhor Samba de São Gonçalo está de volta! Dia 9 de novembro com Revelação, Marquinhos Sensação e Terreiro de Crioulo.",
+    title: "SAMBA DE CABOCLO — Sambarzin",
+    description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Feijoada de Inauguração | Sambarzin",
-    description: "O melhor Samba de São Gonçalo está de volta! Dia 9 de novembro com Revelação, Marquinhos Sensação e Terreiro de Crioulo.",
+    title: "SAMBA DE CABOCLO — Sambarzin",
+    description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${titanOne.variable} font-sans bg-gradient-to-br from-samba-navy via-purple-900 to-samba-navy min-h-screen`}>
+      <body className={`${inter.variable} ${titanOne.variable} font-sans bg-samba-black min-h-screen`}>
         {children}
       </body>
     </html>
