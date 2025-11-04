@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 // ==================== CONSTANTES ====================
-const GUICHEWEB_URL = "https://www.guicheweb.com.br/feijoada-de-inauguracao_47653";
+const GUICHEWEB_URL = "https://www.guicheweb.com.br/samba-de-caboclo_47652";
 
 const EVENT = {
   date: "2025-11-20T14:00:00-03:00",
