@@ -81,6 +81,11 @@ function onCtaClick() {
   // Push evento para dataLayer (GTM)
   if (typeof window !== "undefined") {
     window.dataLayer?.push({ event: "cta_guiche_click" });
+    
+    // Meta Pixel tracking
+    if (typeof (window as any).fbq !== "undefined") {
+      (window as any).fbq("track", "Lead");
+    }
   }
 
   // Redirect com tracking
@@ -348,6 +353,11 @@ export default function Home() {
 declare global {
   interface Window {
     dataLayer?: Array<Record<string, any>>;
+    fbq?: (
+      action: string,
+      event: string,
+      params?: Record<string, any>
+    ) => void;
   }
 }
 
