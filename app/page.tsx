@@ -207,14 +207,14 @@ export default function Home() {
                   {EVENT.mainArtist}
                 </span>
               </div>
-              <p className="text-samba-whiteSoft/80 font-semibold text-sm uppercase tracking-wider mt-4">
+              <p className="text-samba-white font-semibold text-sm uppercase tracking-wider mt-4">
                 Line-up de apoio:
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {EVENT.supportArtists.map((artist, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 bg-whiteSoft/10 backdrop-blur-sm border border-whiteSoft/20 rounded-lg text-whiteSoft font-medium text-sm"
+                    className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white font-medium text-sm"
                   >
                     {artist}
                   </span>
