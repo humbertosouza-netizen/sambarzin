@@ -14,7 +14,10 @@ const titanOne = Titan_One({
 });
 
 export const metadata: Metadata = {
-  title: "Inauguração Sambarzin - Tá Na Mente",
+  title: {
+    default: "Inauguração Sambarzin - Tá Na Mente",
+    template: "%s | Inauguração Sambarzin - Tá Na Mente",
+  },
   description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
   openGraph: {
     title: "Inauguração Sambarzin - Tá Na Mente",
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "https://impulsosg.com.br/bannerfesta.png",
+        url: "https://impulsosg.com.br/bannerfesta.png?v=2",
         width: 1200,
         height: 630,
         alt: "Inauguração Sambarzin - Tá Na Mente",
@@ -46,15 +49,23 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Open Graph Tags explícitas para Facebook */}
-        <meta property="og:title" content="Inauguração Sambarzin - Tá Na Mente" />
+        {/* Open Graph Tags explícitas para Facebook - SEMPRE usar estas tags */}
+        <meta property="og:title" content="Inauguração Sambarzin - Tá Na Mente" key="og-title" />
+        <meta property="og:site_name" content="Inauguração Sambarzin - Tá Na Mente" />
         <meta property="og:description" content="Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny." />
-        <meta property="og:image" content="https://impulsosg.com.br/bannerfesta.png" />
+        <meta property="og:image" content="https://impulsosg.com.br/bannerfesta.png?v=2" />
+        <meta property="og:image:secure_url" content="https://impulsosg.com.br/bannerfesta.png?v=2" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Inauguração Sambarzin - Tá Na Mente" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://impulsosg.com.br" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Inauguração Sambarzin - Tá Na Mente" />
+        <meta name="twitter:description" content="Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny." />
+        <meta name="twitter:image" content="https://impulsosg.com.br/bannerfesta.png?v=2" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
