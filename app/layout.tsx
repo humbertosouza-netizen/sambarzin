@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/bannerfesta.png",
+        url: "https://impulsosg.com.br/bannerfesta.png",
         width: 1200,
         height: 630,
         alt: "Inauguração Sambarzin - Tá Na Mente",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Inauguração Sambarzin - Tá Na Mente",
     description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
-    images: ["/bannerfesta.png"],
+    images: ["https://impulsosg.com.br/bannerfesta.png"],
   },
 };
 
@@ -46,6 +46,15 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Open Graph Tags explícitas para Facebook */}
+        <meta property="og:title" content="Inauguração Sambarzin - Tá Na Mente" />
+        <meta property="og:description" content="Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny." />
+        <meta property="og:image" content="https://impulsosg.com.br/bannerfesta.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content="https://impulsosg.com.br" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
