@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 
 // ==================== CONSTANTES ====================
-const GUICHEWEB_URL = "https://www.guicheweb.com.br/samba-de-caboclo_47652";
+const GUICHEWEB_URL = "https://www.guicheweb.com.br/inauguracao-sambarzin-ta-na-mente_48520";
 
 const EVENT = {
-  date: "2025-11-20T14:00:00-03:00",
-  address: "Rua Coronel Serrado, 202 — São Gonçalo, RJ",
-  mainArtist: "Irmãos de Axé",
-  supportArtists: ["Jóia do Couro", "Ellen Motta", "Alujá", "DJ RJay"],
+  date: "2025-12-13T22:00:00-03:00",
+  address: "Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro",
+  mainArtist: "Tá na mente",
+  supportArtists: ["BemD+", "DJ Benny"],
+  name: "Inauguração Sambarzin - Tá Na Mente",
 };
 
 // ==================== FUNÇÕES DE TRACKING ====================
@@ -60,7 +61,7 @@ function buildTrackedUrl(baseUrl: string): string {
   if (!tracking.utm_source && !tracking.utm_medium && !tracking.utm_campaign) {
     tracking.utm_source = "landing";
     tracking.utm_medium = "cpc";
-    tracking.utm_campaign = "samba-de-caboclo-sambarzin";
+    tracking.utm_campaign = "inauguracao-sambarzin-ta-na-mente";
   }
 
   // Adicionar click_id
@@ -108,15 +109,18 @@ export default function Home() {
     month: "short",
     weekday: "short",
   });
-  const formattedTime = "14h";
+  const formattedTime = "22h";
+  
+  // URL do Google Maps
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(EVENT.address)}`;
 
   return (
     <>
       {/* Decoração topo - faixa geométrica */}
-      <div className="fixed top-0 left-0 right-0 h-2 bg-gradient-to-r from-samba-orange via-samba-red to-samba-yellow z-50" />
-      <div className="fixed top-2 left-0 right-0 h-1 bg-gradient-to-r from-samba-yellow via-samba-orange to-samba-red opacity-50 z-50" />
+      <div className="fixed top-0 left-0 right-0 h-2 bg-gradient-to-r from-samba-primaryDark via-samba-primary to-samba-primaryLight z-50" />
+      <div className="fixed top-2 left-0 right-0 h-1 bg-gradient-to-r from-samba-primaryLight via-samba-primary to-samba-primaryDark opacity-50 z-50" />
 
-      <main className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-12">
+      <main className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-12 bg-samba-blackSoft">
         {/* Pattern decorativo de fundo */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%">
@@ -128,11 +132,11 @@ export default function Home() {
               height="80"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="40" cy="40" r="2" fill="#6B7280" />
-              <circle cx="0" cy="0" r="2" fill="#6B7280" />
-              <circle cx="80" cy="0" r="2" fill="#6B7280" />
-              <circle cx="0" cy="80" r="2" fill="#6B7280" />
-              <circle cx="80" cy="80" r="2" fill="#6B7280" />
+              <circle cx="40" cy="40" r="2" fill="#1A1A1D" />
+              <circle cx="0" cy="0" r="2" fill="#1A1A1D" />
+              <circle cx="80" cy="0" r="2" fill="#1A1A1D" />
+              <circle cx="0" cy="80" r="2" fill="#1A1A1D" />
+              <circle cx="80" cy="80" r="2" fill="#1A1A1D" />
             </pattern>
             <rect width="100%" height="100%" fill="url(#samba-pattern)" />
           </svg>
@@ -142,20 +146,20 @@ export default function Home() {
         <div className="relative max-w-6xl w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Imagem (mobile acima, desktop à esquerda) */}
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-4 ring-samba-orange/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-samba-orange/20 via-transparent to-samba-red/20" />
+            <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-4 ring-samba-primary/30 bg-samba-blackSoft">
+              <div className="absolute inset-0 bg-gradient-to-br from-samba-primary/20 via-transparent to-samba-primaryDark/20 z-10 pointer-events-none" />
               <img
-                src="/sambadocaboclo.heic"
-                alt="Poster SAMBA DE CABOCLO | Sambarzin"
-                className="w-full h-full object-cover"
+                src="/bannerfesta.png"
+                alt="Poster Inauguração Sambarzin - Tá Na Mente"
+                className="w-full h-full object-cover object-center scale-105"
                 onError={(e) => {
                   // Fallback caso imagem não exista
                   e.currentTarget.style.display = "none";
                   e.currentTarget.parentElement!.innerHTML = `
-                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-samba-orange via-samba-red to-samba-yellow p-8">
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-samba-primaryDark via-samba-primary to-samba-primaryLight p-8">
                       <div class="text-center">
                         <div class="text-6xl mb-4">🎵🔥</div>
-                        <div class="font-display text-4xl text-white drop-shadow-lg">SAMBA DE CABOCLO<br/>Sambarzin</div>
+                        <div class="font-display text-4xl text-white drop-shadow-lg">INAUGURAÇÃO SAMBARZIN<br/>TÁ NA MENTE</div>
                       </div>
                     </div>
                   `;
@@ -168,51 +172,49 @@ export default function Home() {
           <div className="order-2 md:order-1 text-center md:text-left space-y-6 md:space-y-8">
             {/* Logo/Badge */}
             <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
-              <div className="inline-block px-4 py-2 bg-samba-red/20 backdrop-blur-sm border border-samba-red/50 rounded-full">
-                <span className="text-samba-red font-bold text-sm uppercase tracking-wider">
-                  Feriado!
-                </span>
-              </div>
-              <div className="text-samba-white/80 text-sm font-medium">
+              <div className="text-samba-whiteSoft/80 text-sm font-medium">
                 Sambarzin — Pra Vida Inteira
               </div>
             </div>
 
             {/* Título principal */}
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight text-samba-yellow drop-shadow-2xl">
-              SAMBA DE CABOCLO
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight text-samba-primary drop-shadow-2xl">
+              INAUGURAÇÃO SAMBARZIN
             </h1>
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl leading-tight text-samba-primaryLight drop-shadow-xl mt-2">
+              TÁ NA MENTE
+            </h2>
 
             {/* Data */}
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-samba-orange to-samba-red rounded-2xl shadow-xl">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-samba-primaryDark to-samba-primary rounded-2xl shadow-xl">
               <div className="text-white">
                 <div className="text-3xl md:text-4xl font-display leading-none">
-                  20 NOV
+                  13 DEZ
                 </div>
                 <div className="text-sm opacity-90 uppercase">
-                  QUI — 14h
+                  SÁB — 22h
                 </div>
               </div>
             </div>
 
             {/* Artistas */}
             <div className="space-y-3">
-              <p className="text-samba-yellow font-semibold text-sm uppercase tracking-wider">
+              <p className="text-samba-primary font-semibold text-sm uppercase tracking-wider">
                 Atração principal:
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                <span className="px-4 py-2 bg-samba-yellow/20 backdrop-blur-sm border border-samba-yellow/50 rounded-lg text-samba-yellow font-bold text-base">
+                <span className="px-4 py-2 bg-samba-primary/20 backdrop-blur-sm border border-samba-primary/50 rounded-lg text-samba-primary font-bold text-base">
                   {EVENT.mainArtist}
                 </span>
               </div>
-              <p className="text-samba-white/80 font-semibold text-sm uppercase tracking-wider mt-4">
+              <p className="text-samba-whiteSoft/80 font-semibold text-sm uppercase tracking-wider mt-4">
                 Line-up de apoio:
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {EVENT.supportArtists.map((artist, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm"
+                    className="px-4 py-2 bg-whiteSoft/10 backdrop-blur-sm border border-whiteSoft/20 rounded-lg text-whiteSoft font-medium text-sm"
                   >
                     {artist}
                   </span>
@@ -222,9 +224,9 @@ export default function Home() {
 
             {/* Endereço */}
             <div className="space-y-3">
-              <div className="flex items-start gap-3 text-samba-white/80 max-w-md mx-auto md:mx-0">
+              <div className="flex items-start gap-3 text-samba-whiteSoft/80 max-w-md mx-auto md:mx-0">
                 <svg
-                  className="w-6 h-6 flex-shrink-0 mt-0.5 text-samba-yellow"
+                  className="w-6 h-6 flex-shrink-0 mt-0.5 text-samba-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -243,6 +245,30 @@ export default function Home() {
                   />
                 </svg>
                 <p className="text-base">{EVENT.address}</p>
+              </div>
+              {/* Botão Como Chegar no Google Maps */}
+              <div className="max-w-md mx-auto md:mx-0">
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 
+                    bg-gradient-to-r from-samba-primaryDark to-samba-primary
+                    text-white font-semibold text-base rounded-full
+                    shadow-lg hover:shadow-xl
+                    hover:scale-105 active:scale-95
+                    transition-all duration-300 ease-out
+                    focus:outline-none focus:ring-4 focus:ring-samba-primary/50"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <span>Como chegar no Maps</span>
+                </a>
               </div>
               {/* Contato WhatsApp */}
               <div className="max-w-md mx-auto md:mx-0">
@@ -276,19 +302,19 @@ export default function Home() {
                 onClick={onCtaClick}
                 aria-label="Comprar ingressos no GuichêWeb"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 
-                  bg-gradient-to-r from-samba-red via-samba-orange to-samba-yellow
+                  bg-gradient-to-r from-samba-primaryDark via-samba-primary to-samba-primaryLight
                   text-white font-bold text-lg rounded-full
-                  shadow-[0_0_30px_rgba(220,38,38,0.6),0_10px_25px_rgba(0,0,0,0.4)]
-                  hover:shadow-[0_0_50px_rgba(220,38,38,0.8),0_15px_35px_rgba(0,0,0,0.5)]
+                  shadow-[0_0_30px_rgba(212,168,87,0.6),0_10px_25px_rgba(0,0,0,0.4)]
+                  hover:shadow-[0_0_50px_rgba(212,168,87,0.8),0_15px_35px_rgba(0,0,0,0.5)]
                   hover:scale-105 active:scale-95
                   transition-all duration-300 ease-out
-                  focus:outline-none focus:ring-4 focus:ring-samba-red/50
+                  focus:outline-none focus:ring-4 focus:ring-samba-primary/50
                   animate-pulse-glow
                   hover:animate-swing"
               >
                 <span className="relative z-10">Comprar Ingresso</span>
                 <svg
-                  className="w-6 h-6 group-hover:translate-x-1 transition-transform text-samba-red"
+                  className="w-6 h-6 group-hover:translate-x-1 transition-transform text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -302,7 +328,7 @@ export default function Home() {
                 </svg>
 
                 {/* Glow effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-samba-red to-samba-yellow opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-samba-primaryDark to-samba-primaryLight opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
               </button>
             </div>
           </div>
@@ -310,22 +336,22 @@ export default function Home() {
 
         {/* CTA Mobile Sticky */}
         {mounted && (
-          <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-samba-black via-samba-black to-transparent z-40">
+          <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-samba-blackSoft via-samba-blackSoft to-transparent z-40">
             <button
               onClick={onCtaClick}
               aria-label="Comprar ingressos no GuichêWeb"
               className="group relative w-full flex items-center justify-center gap-3 px-6 py-4 
-                bg-gradient-to-r from-samba-red via-samba-orange to-samba-yellow
+                bg-gradient-to-r from-samba-primaryDark via-samba-primary to-samba-primaryLight
                 text-white font-bold text-lg rounded-full
-                shadow-[0_0_30px_rgba(220,38,38,0.6),0_10px_25px_rgba(0,0,0,0.4)]
+                shadow-[0_0_30px_rgba(212,168,87,0.6),0_10px_25px_rgba(0,0,0,0.4)]
                 active:scale-95
                 transition-all duration-300 ease-out
-                focus:outline-none focus:ring-4 focus:ring-samba-red/50
+                focus:outline-none focus:ring-4 focus:ring-samba-primary/50
                 animate-pulse-glow"
             >
               <span className="relative z-10">Comprar Ingresso</span>
               <svg
-                className="w-6 h-6 text-samba-red"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -343,8 +369,8 @@ export default function Home() {
       </main>
 
       {/* Decoração rodapé */}
-      <div className="fixed bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-samba-yellow via-samba-orange to-samba-red opacity-50 z-50" />
-      <div className="fixed bottom-1 left-0 right-0 h-2 bg-gradient-to-r from-samba-red via-samba-yellow to-samba-orange z-50" />
+      <div className="fixed bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-samba-primaryLight via-samba-primary to-samba-primaryDark opacity-50 z-50" />
+      <div className="fixed bottom-1 left-0 right-0 h-2 bg-gradient-to-r from-samba-primaryDark via-samba-primaryLight to-samba-primary z-50" />
     </>
   );
 }

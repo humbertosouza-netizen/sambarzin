@@ -10,13 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         samba: {
-          black: "#000000", // Preto (fundo/parede)
-          yellow: "#FFD700", // Amarelo vibrante (título SAMBA, destaques)
-          orange: "#FF6B35", // Laranja queimado (ornamentos indígenas/traços)
-          white: "#FFFFFF", // Branco (textos secundários)
-          red: "#DC2626", // Vermelho (detalhes, destaque FERIADO e setinhas)
-          gray: "#6B7280", // Cinza (textura do fundo e fumaça/luz)
-          cream: "#FEFCE8", // Mantido para compatibilidade
+          primary: "#D4A857", // Dourado principal
+          primaryDark: "#B27F30", // Dourado escuro
+          primaryLight: "#F3C97A", // Dourado claro
+          black: "#000000", // Preto
+          blackSoft: "#0D0D0F", // Preto suave
+          smokeGray: "#1A1A1D", // Cinza fumaça
+          white: "#FFFFFF", // Branco
+          whiteSoft: "#F5F5F5", // Branco suave
+          // Mantidos para compatibilidade (serão substituídos gradualmente)
+          yellow: "#D4A857",
+          orange: "#F3C97A",
+          red: "#D4A857",
+          gray: "#1A1A1D",
+          cream: "#F5F5F5",
         },
       },
       fontFamily: {

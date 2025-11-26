@@ -14,18 +14,18 @@ const titanOne = Titan_One({
 });
 
 export const metadata: Metadata = {
-  title: "SAMBA DE CABOCLO — Sambarzin",
-  description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
+  title: "Inauguração Sambarzin - Tá Na Mente",
+  description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
   openGraph: {
-    title: "SAMBA DE CABOCLO — Sambarzin",
-    description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
+    title: "Inauguração Sambarzin - Tá Na Mente",
+    description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SAMBA DE CABOCLO — Sambarzin",
-    description: "Samba de Caboclo — Sambarzin. Quinta, 20 de novembro (feriado) às 14h. Rua Coronel Serrado, 202 — São Gonçalo, RJ. Com Irmãos de Axé, Jóia do Couro, Ellen Motta, Alujá e DJ RJay.",
+    title: "Inauguração Sambarzin - Tá Na Mente",
+    description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
   },
 };
 
@@ -72,7 +72,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className={`${inter.variable} ${titanOne.variable} font-sans bg-samba-black min-h-screen`}>
+      <body className={`${inter.variable} ${titanOne.variable} font-sans bg-samba-blackSoft min-h-screen`}>
         {children}
       </body>
     </html>
