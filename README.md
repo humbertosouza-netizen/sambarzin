@@ -1,6 +1,6 @@
-# 🎵🔥 SAMBA DE CABOCLO — Sambarzin
+# 🎵🔥 Inauguração Sambarzin - Tá Na Mente
 
-Landing page minimalista para o evento SAMBA DE CABOCLO com identidade urbana/raiz, tribal/afro-indígena e festiva.
+Landing page minimalista para o evento Inauguração Sambarzin - Tá Na Mente com identidade dourada e festiva.
 
 ## 🚀 Início Rápido
 
@@ -26,7 +26,7 @@ const GUICHEWEB_URL = "https://www.guicheweb.com.br"; // ⬅️ TROCAR AQUI
 
 ### Imagem do Poster
 
-Adicione a imagem do evento em `public/sambadocaboclo.heic`.
+Adicione a imagem do evento em `public/bannerfesta.png`.
 
 Se não houver imagem, será exibido um fallback automático com gradiente e emojis.
 
@@ -39,7 +39,7 @@ A landing implementa tracking automático:
 - **UTMs default**: Se não houver UTMs na URL, usa:
   - `utm_source=landing`
   - `utm_medium=cpc`
-  - `utm_campaign=samba-de-caboclo-sambarzin`
+  - `utm_campaign=inauguracao-sambarzin-ta-na-mente`
 - **Click ID**: Gera um ID único de 8 caracteres (base36) para cada clique
 
 ## 🎨 Recursos
@@ -84,27 +84,27 @@ public/
 
 ## 📅 Informações do Evento
 
-**Data**: Quinta, 20 de Novembro (Feriado) — 14h  
-**Local**: Rua Coronel Serrado, 202 — São Gonçalo, RJ  
+**Data**: Sábado, 13 de Dezembro — 22h  
+**Local**: Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro  
 **Contato**: [Chamar no WhatsApp](https://wa.me/5521983541011)  
 **Marca**: Sambarzin — Pra Vida Inteira
 
 ### 🎤 Atrações
 
-**Atração Principal**: Irmãos de Axé  
-**Line-up de Apoio**: Jóia do Couro • Ellen Motta • Alujá • DJ RJay
+**Atração Principal**: Tá na mente  
+**Line-up de Apoio**: BemD+ • DJ Benny
 
 ## 🎨 Paleta de Cores
 
 **Paleta Principal**:
-- **Preto** (#000000) - Fundo/parede
-- **Amarelo Vibrante** (#FFD700) - Título "SAMBA", destaques
-- **Laranja Queimado** (#FF6B35) - Ornamentos indígenas/traços
-- **Branco** (#FFFFFF) - Textos secundários
-- **Vermelho** (#DC2626) - Detalhes, destaque "FERIADO!" e setinhas
+- **Dourado Principal** (#D4A857) - Cor principal do evento
+- **Dourado Escuro** (#B27F30) - Tons escuros
+- **Dourado Claro** (#F3C97A) - Tons claros
+- **Preto** (#000000) - Fundo
+- **Preto Suave** (#0D0D0F) - Fundo alternativo
+- **Cinza Fumaça** (#1A1A1D) - Texturas
+- **Branco** (#FFFFFF) - Textos principais
+- **Branco Suave** (#F5F5F5) - Textos secundários
 
-**Paleta Secundária**:
-- **Cinza** (#6B7280) - Textura do fundo e fumaça/luz
-
-**Feeling**: Urbana/raiz • Tribal/afro-indígena • Festivo e quente (tons quentes destacando samba/caboclo)
+**Feeling**: Dourado luxuoso • Festivo e elegante
 

@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
     type: "website",
     locale: "pt_BR",
+    images: [
+      {
+        url: "/bannerfesta.png",
+        width: 1200,
+        height: 630,
+        alt: "Inauguração Sambarzin - Tá Na Mente",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Inauguração Sambarzin - Tá Na Mente",
     description: "Inauguração Sambarzin - Tá Na Mente. Sábado, 13 de dezembro às 22h. Rua Coronel Serrado, 202, São Gonçalo, Rio de Janeiro. Com Tá na mente, BemD+ e DJ Benny.",
+    images: ["/bannerfesta.png"],
   },
 };
 
